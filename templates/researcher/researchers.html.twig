@@ -1,0 +1,6 @@
+<h1>Liste des Chercheurs dans le Laboratoire (ID: {{ labno }})</h1>
+<ul>
+    {% for researcher in researchers %}
+        <li>{{ researcher.chnom }} - Grade: {{ researcher.grade }}</li>
+    {% endfor %}
+</ul>

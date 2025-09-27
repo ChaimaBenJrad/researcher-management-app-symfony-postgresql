@@ -1,0 +1,13 @@
+{# templates/researcher/erreur_date.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Error{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style_errur.css') }}">
+
+    <div class="container-error">
+        <h1>{{ errorMessage }}</h1>
+        <a href="{{ path('researcher_index') }}" class="btn">Return to the Researcher List</a>
+    </div>
+{% endblock %}

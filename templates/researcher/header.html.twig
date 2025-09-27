@@ -1,0 +1,34 @@
+{# templates/researcher/header.html.twig #}
+<div class="header">
+    <div class="header-top">
+        <h1>Researcher Management</h1>
+        <nav class="navigation">
+            <a href="{{ path('researcher_add') }}">Add a Researcher</a>
+            <a href="{{ path('historique_chercheurs') }}">Researchers History</a>
+            <a href="{{ path('all_publications') }}">All Publications</a>
+        </nav>
+    </div>
+
+    <div class="header-bottom">
+        <form action="{{ path('researchers_top') }}" method="get" class="date-form">
+            <label for="start_date">Start date :</label>
+            <input type="date" name="start_date" required>
+            
+            <label for="end_date">End date :</label>
+            <input type="date" name="end_date" required>
+
+            <button type="submit">See Main Publications</button>
+        </form>
+    </div>
+</div>
+
+{# Error popup if an error is present #}
+{% if errorMessage is defined %}
+    <div id="error-popup" class="error-popup">
+        <div class="popup-content">
+            <h2>Adding, updating, or deleting is not allowed. Operations can only be performed on business days (Monday to Friday) between 8:00 AM and 6:00 PM.</h2>
+            <p>{{ errorDetails }}</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+{% endif %}

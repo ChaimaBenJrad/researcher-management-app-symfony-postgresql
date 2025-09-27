@@ -1,0 +1,45 @@
+{# templates/researcher/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Chercheurs{% endblock %}
+
+{% block body %}
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+
+<!-- Inclure l'en-tête réutilisable -->
+{% include 'researcher/header.html.twig' %}
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Academic rank</th>
+                <th>Status</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for researcher in researchers %}
+                <tr>
+                    <td>{{ researcher.chno }}</td>
+                    <td>{{ researcher.chnom }}</td>
+                    <td>{{ researcher.grade }}</td>
+                    <td>{{ researcher.statut }}</td>
+                    <td>{{ researcher.email }}</td>
+                    <td>
+                        <a href="{{ path('researcher_publications', {'chno': researcher.chno}) }}">View Publications</a>
+<a href="{{ path('researcher_update', {'chno': researcher.chno}) }}">Edit</a>
+                        <a href="{{ path('researcher_delete', {'chno': researcher.chno}) }}" onclick="return confirm('Are you sure you want to delete this researcher?')">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{# templates/researcher/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Update Researcher Profile{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style_edit.css') }}">
+
+    <h1>Update Researcher Profile</h1>
+    <form action="{{ path('researcher_update', {'chno': researcher.chno}) }}" method="POST">
+        <label for="chnom">Name</label>
+        <input type="text" id="chnom" name="chnom" value="{{ researcher.chnom }}" required>
+        
+        <label for="grade">Academic Rank</label>
+        <input type="text" id="grade" name="grade" value="{{ researcher.grade }}">
+        
+        <label for="statut">Status</label>
+        <input type="text" id="statut" name="statut" value="{{ researcher.statut }}">
+        
+        <label for="salaire">Salary</label>
+        <input type="number" id="salaire" name="salaire" value="{{ researcher.salaire }}" step="0.01">
+        
+        <label for="prime">Bonus</label>
+        <input type="number" id="prime" name="prime" value="{{ researcher.prime }}" step="0.01">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="{{ researcher.email }}">
+        
+        <label for="supno">Supervisor</label>
+        <input type="number" id="supno" name="supno" value="{{ researcher.supno }}">
+        
+        <label for="labno">Laboratory</label>
+        <input type="number" id="labno" name="labno" value="{{ researcher.labno }}">
+        
+        <label for="facno">Faculty</label>
+        <input type="number" id="facno" name="facno" value="{{ researcher.facno }}">
+        
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}

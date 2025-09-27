@@ -1,0 +1,157 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Conteneur principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #007bff;
+}
+
+/* Tableau des chercheurs */
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Ajoute une marge de 20px autour du tableau */
+    width: 100%; /* Facultatif : pour s'assurer que le tableau prend toute la largeur disponible */
+    border-collapse: collapse; /* Facultatif : pour fusionner les bordures des cellules */
+
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.1em;
+}
+
+td {
+    color: #555;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Liens */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.table-container {
+    margin: 20px auto; /* Ajoute une marge autour du tableau et le centre horizontalement */
+    width: 90%; /* Ajuste la largeur totale du conteneur */
+}
+
+/* Style de la section header */
+/* Style général du header */
+.header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Titre principal */
+.header h1 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+/* Liens de navigation */
+.navigation a {
+    color: #4169E1;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+    color: #007bff;
+}
+
+/* Formulaire de dates */
+.header-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.date-form input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.date-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.date-form button:hover {
+    background-color: #007bff;
+}

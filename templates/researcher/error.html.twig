@@ -1,0 +1,22 @@
+{# templates/researcher/error.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur{% endblock %}
+
+{% block body %}
+    <div class="container-error">
+        <h1>{{ errorMessage }}</h1>
+
+        {% if errorDetails is not empty %}
+            <ul>
+                {% for error in errorDetails %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No specific errors found.</p>
+        {% endif %}
+
+        <a href="{{ path('researcher_index') }}" class="btn">Return to the Researcher List</a>
+    </div>
+{% endblock %}

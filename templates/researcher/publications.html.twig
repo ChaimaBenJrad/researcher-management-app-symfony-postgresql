@@ -1,0 +1,8 @@
+    <link rel="stylesheet" href="{{ asset('css/style_pubs_par_chercheur.css') }}">
+
+<h1>Researcher Publications (ID: {{ chno }})</h1>
+<ul>
+    {% for publication in publications %}
+        <li>{{ publication.titre }} - Type: {{ publication.type }} - Date: {{ publication.date }}</li>
+    {% endfor %}
+</ul>

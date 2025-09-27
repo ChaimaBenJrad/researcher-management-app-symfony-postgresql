@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Researcher History{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style_historique.css') }}">
+
+    <h1>Researcher History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in historique %}
+                <tr>
+                    <td>{{ record.chno }}</td>
+                    <td>{{ record.chnom }}</td>
+                    <td>{{ record.action_type }}</td>
+                    <td>{{ record.action_date|date('Y-m-d H:i') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

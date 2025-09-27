@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add a Researcher{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style_add.css') }}">
+
+<h1>Add a Researcher</h1>
+
+<form method="POST">
+    <label for="chnom">Name:</label>
+    <input type="text" name="chnom" id="chnom" required><br>
+
+    <label for="grade">Academic Rank:</label>
+    <input type="text" name="grade" id="grade" required><br>
+
+    <label for="statut">Status:</label>
+    <input type="text" name="statut" id="statut" required><br>
+
+    <label for="daterecrut">Recruitment Date:</label>
+    <input type="date" name="daterecrut" id="daterecrut" required><br>
+
+    <label for="salaire">Salary:</label>
+    <input type="number" name="salaire" id="salaire" required><br>
+
+    <label for="prime">Bonus:</label>
+    <input type="number" name="prime" id="prime" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required><br>
+
+    <label for="supno">Supervisor:</label>
+    <input type="number" name="supno" id="supno"><br>
+
+    <label for="labno">Laboratory:</label>
+    <input type="number" name="labno" id="labno" required><br>
+
+    <label for="facno">Faculty:</label>
+    <input type="number" name="facno" id="facno" required><br>
+
+    <button type="submit">Add Researcher</button>
+</form>
+{% if errorMessage %}
+    <div id="error-popup" style="display: block;">
+        <div class="popup-content">
+            <h2>{{ errorMessage }}</h2>
+            <p>{{ errorDetails }}</p>
+            <button onclick="closePopup()"><a href="{{ path('researcher_index') }}">Fermer</a></button>
+        </div>
+    </div>
+{% endif %}
+
+<script>
+    function closePopup() {
+        document.getElementById('error-popup').style.display = 'none';
+    }
+</script>
+
+<style>
+    #error-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    .popup-content {
+        text-align: center;
+    }
+</style>
+{% endblock %}

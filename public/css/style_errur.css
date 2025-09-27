@@ -1,0 +1,86 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* En-tête */
+h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Conteneur principal */
+.container-error {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Liste des erreurs */
+ul {
+    padding: 15px;
+    background-color: #f8d7da;
+    border-radius: 5px;
+    list-style-type: none;
+    color: #721c24;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Message quand aucune erreur spécifique n'est trouvée */
+p {
+    font-size: 1em;
+    color: #721c24;
+    text-align: center;
+}
+
+/* Bouton Retour */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4169E1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #354c8c;
+}
+
+/* Responsive: ajustements pour les petits écrans */
+@media (max-width: 768px) {
+    .container-error {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    ul {
+        padding: 10px;
+    }
+
+    a {
+        width: 100%;
+        text-align: center;
+    }
+}

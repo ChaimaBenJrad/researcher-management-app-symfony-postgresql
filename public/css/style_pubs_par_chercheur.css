@@ -1,0 +1,70 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #007bff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Liste des publications */
+ul {
+    list-style-type: none; /* Enlève les puces de la liste */
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Élément de la liste */
+ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+}
+
+/* Dernier élément de la liste sans bordure inférieure */
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* Lien au survol */
+ul li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Affichage du type et de la date de publication */
+ul li span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Réactivité pour les petits écrans */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+}

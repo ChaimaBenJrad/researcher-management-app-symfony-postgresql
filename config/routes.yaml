@@ -1,0 +1,46 @@
+# Route pour afficher la liste des chercheurs
+researcher_index:
+    path: /researcher
+    controller: App\Controller\ResearcherController::index
+
+# Route pour afficher les publications d'un chercheur
+researcher_publications:
+    path: /researcher/{chno}/publications
+    controller: App\Controller\ResearcherController::publications
+
+# Route pour afficher la bibliographie d'une publication
+publication_bibliography:
+    path: /publication/{pubno}
+    controller: App\Controller\ResearcherController::showBibliography
+
+# Route pour afficher les chercheurs dans un laboratoire
+laboratory_researchers:
+    path: /laboratory/{labno}/researchers
+    controller: App\Controller\ResearcherController::showResearchersInLab
+
+# Route pour afficher le formulaire d'édition d'un chercheur
+researcher_edit:
+    path: /researcher/edit/{chno}
+    controller: App\Controller\ResearcherController::edit
+
+# Route pour supprimer un chercheur
+researcher_delete:
+    path: /researcher/delete/{chno}
+    controller: App\Controller\ResearcherController::delete
+# Route pour afficher l'historique des chercheurs
+historique_chercheurs:
+    path: /historique
+    controller: App\Controller\ResearcherController::showHistorique
+all_publications:
+    path: /publications/all
+    controller: App\Controller\ResearcherController::showAllPublications
+researcher_add:
+    path: /researcher/add
+    controller: App\Controller\ResearcherController::add
+# Route pour mettre à jour les informations d'un chercheur
+researcher_update:
+    path: /researcher/update/{chno}
+    controller: App\Controller\ResearcherController::update
+researchers_top:
+  path: /researchers/top
+  controller: App\Controller\ResearcherController::topResearchers

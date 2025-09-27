@@ -1,0 +1,61 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+
+services:
+    App\Controller\ResearcherController:
+        arguments:
+            $connection: '@pdo_connection'
+            $postgresService: '@App\Service\PostgresService'  # Injecter le service PostgresService
+
+
+    pdo_connection:
+        class: PDO
+        arguments:
+            - 'pgsql:host=127.0.0.1;port=5433;dbname=test'
+            - 'postgres'
+            - 'yourPassword'
+        public: true
+        tags: ['controller.service_arguments']
+
+
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+   # Définir explicitement PostgresService
+    App\Service\PostgresService:
+        arguments:
+            $host: '%env(DATABASE_HOST)%'
+            $port: '%env(DATABASE_PORT)%'
+            $dbname: '%env(DATABASE_NAME)%'
+            $user: '%env(DATABASE_USER)%'
+            $password: '%env(DATABASE_PASSWORD)%'
+
+
+    # Définir tous les autres contrôleurs automatiquement comme services
+    App\Controller\:
+        resource: '../src/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+    # Configurer un service de repository si vous en avez un
+    # Service pour gérer la sécurité (par exemple, un service pour l'authentification)
+    # Vous pouvez aussi configurer des services de cache ou de gestion des sessions si nécessaire
+    

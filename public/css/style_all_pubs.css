@@ -1,0 +1,93 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #007bff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Table principale */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* En-têtes de table */
+table thead tr {
+    background-color: #007bff;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Cellules */
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Lignes paires pour l'alternance */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Effet au survol */
+table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Aucune donnée trouvée */
+table tbody tr td[colspan="7"] {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Bouton de retour */
+a {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Réactivité pour mobiles */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table th,
+    table td {
+        padding: 8px 10px;
+    }
+}

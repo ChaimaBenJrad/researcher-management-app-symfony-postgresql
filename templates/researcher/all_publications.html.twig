@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Publications{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style_all_pubs.css') }}">
+
+    <h1>All Publications</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Publication ID</th>
+                <th>Title</th>
+                <th>Theme</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Editor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for publication in publications %}
+                <tr>
+                    <td>{{ publication.pubno }}</td>
+                    <td>{{ publication.titre }}</td>
+                    <td>{{ publication.theme }}</td>
+                    <td>{{ publication.type }}</td>
+                    <td>{{ publication.date|date('d/m/Y') }}</td>
+                    <td>{{ publication.apparition }}</td>
+                    <td>{{ publication.editeur }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">No publications found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{{ path('researcher_index') }}">Return to the Researcher List</a>
+{% endblock %}

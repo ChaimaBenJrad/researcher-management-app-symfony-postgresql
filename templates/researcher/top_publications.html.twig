@@ -1,0 +1,32 @@
+{# templates/researcher/top_publications.html.twig #}
+    <link rel="stylesheet" href="{{ asset('css/style_top_pubs.css') }}">
+
+<h2>{{ message }}</h2>
+
+{% if researchers is not empty %}
+    <h3>Top chercheurs par publications</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Faculté</th>
+                <th>Laboratoire</th>
+                <th>Chercheur</th>
+                <th>Nombre de publications</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for researcher in researchers %}
+                <tr>
+                    <td>{{ researcher.facnom }}</td>
+                    <td>{{ researcher.labnom }}</td>
+                    <td>{{ researcher.chnom }}</td>
+                    <td>{{ researcher.publication_count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Aucun chercheur n'a été trouvé dans la période spécifiée.</p>
+{% endif %}
+
+<a href="{{ path('researcher_index') }}">Retour à la liste des chercheurs</a>

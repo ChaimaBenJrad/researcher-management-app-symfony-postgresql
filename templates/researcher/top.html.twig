@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Meilleurs Chercheurs{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/style_top.css') }}">
+
+<h1>Top Researchers ({{ startDate }} - {{ endDate }})</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Faculty</th>
+            <th>Laboratory</th>
+            <th>Researcher ID</th>
+            <th>Researcher Name</th>
+            <th>Number of Publications</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for researcher in topResearchers %}
+        <tr>
+            <td>{{ researcher.facnom }}</td>
+            <td>{{ researcher.labnom }}</td>
+            <td>{{ researcher.chno }}</td>
+            <td>{{ researcher.chnom }}</td>
+            <td>{{ researcher.publication_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{# templates/researcher/top_publications_form.html.twig #}
+
+<h2>Top chercheurs par publications</h2>
+
+<!-- Affichage du formulaire -->
+{{ form_start(form) }}
+    <div>
+        <!-- Champ de la date de début -->
+        {{ form_label(form.start_date) }}
+        {{ form_widget(form.start_date) }}
+    </div>
+
+    <div>
+        <!-- Champ de la date de fin -->
+        {{ form_label(form.end_date) }}
+        {{ form_widget(form.end_date) }}
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button type="submit">Voir les Top chercheurs</button>
+{{ form_end(form) }}
