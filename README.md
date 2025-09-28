@@ -1,6 +1,6 @@
-# researcher-management-app-symfony-postgresql
-
 ## Research Management System
+
+![interface](assets/interface.png)
 
 A web application built with **Symfony** and **PostgreSQL** to manage research activities of faculty members and researchers in research laboratories. The system provides an intuitive interface to interact with the database and perform common operations like viewing publications along with their corresponding researchers and details.
 ## Project Overview
